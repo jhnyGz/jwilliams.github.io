@@ -206,5 +206,5 @@
     </div>
 
     <div class="terminal">
-        <<p class="prompt">root@cybersec-portfolio:~$ <span class="blink">_</span></p>
+        <p class="prompt">root@cybersec-portfolio:~$ <span class="blink">_</span></p>
 

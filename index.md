@@ -34,6 +34,11 @@
             margin: 10px 0;
             padding: 15px;
             border-radius: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+        }
+        .project-card:hover {
+            transform: translateY(-5px); /* Move card slightly upwards on hover */
+            box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5); /* Enhance shadow on hover */
         }
         .metric-bar {
             height: 20px;
@@ -52,6 +57,10 @@
             padding: 15px;
             border-radius: 4px;
             border: 1px solid #238636;
+            transition: background-color 0.3s ease; /* Add transition for background color */
+        }
+        .stats-box:hover {
+            background-color: rgba(35, 134, 54, 0.3); /* Darken background on hover */
         }
         .blink {
             animation: blink 1s infinite;
@@ -197,22 +206,4 @@
     </div>
 
     <div class="terminal">
-        <p class="prompt">root@cybersec-portfolio:~$ <span class="command">./display_certifications</span></p>
-        <div class="output">
-            <div class="stats-box">
-                <h4>Active Certifications</h4>
-                <ul>
-                    <li>Google Foundations of Cybersecurity (YQXAJYCCXFE6)</li>
-                    <li>Google Technical Support Fundamentals (QX6TEFUZW4TJ)</li>
-                    <li>AWS Cloud Practitioner Essentials</li>
-                    <li>CompTIA Network+ [Progress: 80%]</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="terminal">
-        <p class="prompt">root@cybersec-portfolio:~$ <span class="blink">_</span></p>
-    </div>
-</body>
-</html>
+        <p class="prompt">root@cybersec-portfolio:~$ <span class="command

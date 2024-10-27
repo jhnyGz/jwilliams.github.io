@@ -97,9 +97,33 @@
                 </div>
             </div>
         </div>
+        
+        <div class="project-card">
+            <h3>🛡️ [02] Azure SOC with Honeypot and Threat Intelligence Integration for Proactive Threat Detection</h3>
+            <div class="grid">
+                <div class="stats-box">
+                    <h4>Core Components</h4>
+                    <ul>
+                        <li>Microsoft Azure Cloud Platform</li>
+                        <li>Azure Virtual Machine (Ubuntu)</li>
+                        <li>MISP</li>
+                    </ul>
+                </div>
+                <div class="stats-box">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Honeypot and Centralized Threat Data Collection</li>
+                        <li>Automated Threat Intelligence Integration</li>
+                        <li>Real-Time Threat Detection and Response</li>
+                        <li>Customizable Alerts and Security Monitoring</li>
+                        <li>Vulnerability and Attack Surface Identification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <div class="project-card">
-            <h3>🔐 [02] NSA Codebreaker Challenge 2023</h3>
+            <h3>🔐 [03] NSA Codebreaker Challenge 2023</h3>
             <div class="grid">
                 <div class="stats-box">
                     <h4>Tools Utilized</h4>

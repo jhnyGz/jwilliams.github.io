@@ -107,6 +107,7 @@
                         <li>Microsoft Azure Cloud Platform</li>
                         <li>Azure Virtual Machine (Ubuntu)</li>
                         <li>MISP</li>
+                        <li>Azure Function App</li>
                     </ul>
                 </div>
                 <div class="stats-box">

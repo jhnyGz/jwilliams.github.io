@@ -147,7 +147,7 @@
         </div>
 
         <div class="project-card">
-            <h3>🌐 [03] Enterprise Home Lab Setup</h3>
+            <h3>🌐 [04] Enterprise Home Lab Setup</h3>
             <div class="grid">
                 <div class="stats-box">
                     <h4>Hardware Infrastructure</h4>
@@ -181,7 +181,7 @@
         </div>
 
         <div class="project-card">
-            <h3>💻 [04] Development Workstation</h3>
+            <h3>💻 [05] Development Workstation</h3>
             <div class="grid">
                 <div class="stats-box">
                     <h4>System Specifications</h4>

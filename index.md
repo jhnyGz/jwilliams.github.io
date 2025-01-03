@@ -1,235 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Professional - Interactive Resume</title>
     <style>
+        /* Base styles */
         body {
-            background-color: #0d1117;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background: linear-gradient(to bottom right, #1a202c, #000000, #2a4365);
+            min-height: 100vh;
         }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header styles */
+        header {
+            background-color: rgba(26, 32, 44, 0.8);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Main content styles */
+        main {
+            padding-top: 80px;
+        }
+        section {
+            margin-bottom: 4rem;
+        }
+        h1, h2, h3 {
+            color: #63b3ed;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4299e1;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background-color: #3182ce;
+        }
+        /* Terminal-like box styles */
         .terminal {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 10px 0;
-            box-shadow: 0 0 10px rgba(0,255,0,0.1);
+            background-color: rgba(45, 55, 72, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #4a5568;
         }
-        .prompt {
-            color: #58a6ff;
-            margin-bottom: 10px;
+        .terminal::before {
+            content: "$ ";
+            color: #48bb78;
         }
-        .command {
-            color: #00ff00;
-        }
-        .output {
-            color: #c9d1d9;
-            line-height: 1.5;
-        }
-        .project-card {
-            border: 1px solid #30363d;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 4px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
-        }
-        .project-card:hover {
-            transform: translateY(-5px); /* Move card slightly upwards on hover */
-            box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5); /* Enhance shadow on hover */
-        }
-        .metric-bar {
-            height: 20px;
-            background-color: #238636;
-            margin: 5px 0;
-            transition: width 1s ease-in-out;
-        }
-        .grid {
+        /* Project styles */
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            gap: 2rem;
         }
-        .stats-box {
-            background: rgba(35, 134, 54, 0.1);
-            padding: 15px;
-            border-radius: 4px;
-            border: 1px solid #238636;
-            transition: background-color 0.3s ease; /* Add transition for background color */
+        .project-card {
+            background-color: rgba(45, 55, 72, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border: 1px solid #4a5568;
         }
-        .stats-box:hover {
-            background-color: rgba(35, 134, 54, 0.3); /* Darken background on hover */
-        }
-        .blink {
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
+        /* Footer styles */
+        footer {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <p class="prompt">root@cybersec-portfolio:~$ <span class="command">./display_projects --comprehensive</span></p>
-        
-        <div class="project-card">
-            <h3>🛡️ [01] Microsoft Sentinel SIEM Implementation</h3>
-            <div class="grid">
-                <div class="stats-box">
-                    <h4>Core Components</h4>
-                    <ul>
-                        <li>Microsoft Azure Cloud Platform</li>
-                        <li>Azure Virtual Machine (Windows Pro)</li>
-                        <li>Microsoft Sentinel SIEM</li>
-                        <li>Log Analytics Workspace</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Centralized Log Collection</li>
-                        <li>Real-Time Threat Detection</li>
-                        <li>Custom Alert Rules</li>
-                        <li>RDP Event Monitoring</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <h3>🛡️ [02] Azure SOC with Honeypot and Threat Intelligence Integration for Proactive Threat Detection</h3>
-            <div class="grid">
-                <div class="stats-box">
-                    <h4>Core Components</h4>
-                    <ul>
-                        <li>Microsoft Azure Cloud Platform</li>
-                        <li>Azure Virtual Machine (Ubuntu)</li>
-                        <li>MISP</li>
-                        <li>Azure Function App</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Honeypot and Centralized Threat Data Collection</li>
-                        <li>Automated Threat Intelligence Integration</li>
-                        <li>Real-Time Threat Detection and Response</li>
-                        <li>Customizable Alerts and Security Monitoring</li>
-                        <li>Vulnerability and Attack Surface Identification</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="project-card">
-            <h3>🔐 [03] NSA Codebreaker Challenge 2023</h3>
-            <div class="grid">
-                <div class="stats-box">
-                    <h4>Tools Utilized</h4>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Cybersecurity Professional</h1>
+                <p>Protecting digital assets and securing the future</p>
+                <a href="#about" class="btn">About Me</a>
+                <a href="#projects" class="btn">My Projects</a>
+                <a href="#experience" class="btn">Experience</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="terminal">
+                    <p>Experienced cybersecurity professional with expertise in:</p>
                     <ul>
-                        <li>Wireshark - Network Analysis</li>
-                        <li>Python & Rust - Development</li>
-                        <li>OpenSSL - Security Testing</li>
-                        <li>Base86 & Assembly - Low-level Analysis</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Achievements</h4>
-                    <ul>
-                        <li>Complex Task Completion</li>
-                        <li>Threat Analysis Implementation</li>
-                        <li>Signal Decryption Success</li>
-                        <li>Security Awareness Enhancement</li>
+                        <li>Network Security</li>
+                        <li>Penetration Testing</li>
+                        <li>Incident Response</li>
+                        <li>Security Architecture</li>
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Secure Network Implementation</h3>
+                        <p>Designed and implemented a secure network infrastructure for a Fortune 500 company.</p>
+                        <ul>
+                            <li>Configured enterprise-grade firewalls</li>
+                            <li>Implemented intrusion detection and prevention systems</li>
+                            <li>Set up VPN for secure remote access</li>
+                            <li>Conducted thorough network segmentation</li>
+                            <li>Implemented multi-factor authentication across the network</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3>Penetration Testing Framework</h3>
+                        <p>Developed a custom penetration testing framework for the security team.</p>
+                        <ul>
+                            <li>Created modular architecture for easy expansion</li>
+                            <li>Implemented automated vulnerability scanning</li>
+                            <li>Developed custom exploit modules</li>
+                            <li>Integrated with popular security tools like Metasploit and Nmap</li>
+                            <li>Implemented detailed reporting and analytics features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="terminal">
+                    <div>
+                        <h3>Senior Cybersecurity Analyst</h3>
+                        <p>TechGuard Solutions | 2020 - Present</p>
+                        <ul>
+                            <li>Lead a team of security analysts in threat detection and incident response</li>
+                            <li>Implement and maintain security information and event management (SIEM) systems</li>
+                            <li>Conduct regular security assessments and provide recommendations for improvements</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Information Security Specialist</h3>
+                        <p>CyberDefense Corp | 2017 - 2020</p>
+                        <ul>
+                            <li>Performed vulnerability assessments and penetration testing for client networks</li>
+                            <li>Developed and implemented security policies and procedures</li>
+                            <li>Provided security awareness training to employees across the organization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Interested in working together? Get in touch!</p>
+                <a href="mailto:contact@example.com" class="btn">Email Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cybersecurity Professional. All rights reserved.</p>
         </div>
-
-        <div class="project-card">
-            <h3>🌐 [04] Enterprise Home Lab Setup</h3>
-            <div class="grid">
-                <div class="stats-box">
-                    <h4>Hardware Infrastructure</h4>
-                    <ul>
-                        <li>Protectli Vault (pfSense)</li>
-                        <li>Netgear 84 Gbit Switch</li>
-                        <li>Nighthawk WiFi 6 Router</li>
-                        <li>TerraMaster F2-221 NAS</li>
-                        <li>Lenovo ThinkServer TS140</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Software Stack</h4>
-                    <ul>
-                        <li>pfSense & VLANs</li>
-                        <li>Proxmox VM Management</li>
-                        <li>Pi-hole DNS Protection</li>
-                        <li>OpenVPN & Cloudflare</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Implementations</h4>
-                    <ul>
-                        <li>VLAN Segmentation</li>
-                        <li>Granular Firewall Rules</li>
-                        <li>Virtual Machine Management</li>
-                        <li>Secure Remote Access</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>💻 [05] Development Workstation</h3>
-            <div class="grid">
-                <div class="stats-box">
-                    <h4>System Specifications</h4>
-                    <ul>
-                        <li>NVIDIA RTX 3070TI (AI/ML Ready)</li>
-                        <li>Dual Boot: Windows 11 + Ubuntu</li>
-                        <li>Ultrawide Monitor Setup</li>
-                        <li>Custom Cooling Solution</li>
-                    </ul>
-                </div>
-                <div class="stats-box">
-                    <h4>Optimizations</h4>
-                    <ul>
-                        <li>AI/ML Development Environment</li>
-                        <li>Enhanced Display Configuration</li>
-                        <li>Performance Tuning</li>
-                        <li>Comprehensive Documentation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="terminal">
-        <p class="prompt">root@cybersec-portfolio:~$ <span class="command">./show_experience</span></p>
-        <div class="grid">
-            <div class="stats-box">
-                <h4>Mastercard Cybersecurity Program</h4>
-                <ul>
-                    <li>Security Awareness Analysis</li>
-                    <li>Phishing Threat Assessment</li>
-                    <li>Security Training Development</li>
-                    <li>Data Analysis Implementation</li>
-                </ul>
-            </div>
-            <div class="stats-box">
-                <h4>AIG Shields Up Program</h4>
-                <ul>
-                    <li>Threat Analysis Simulation</li>
-                    <li>CISA Research & Implementation</li>
-                    <li>Python Script Development</li>
-                    <li>Technical Documentation</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="terminal">
-        <p class="prompt">root@cybersec-portfolio:~$ <span class="blink">_</span></p>
-
+    </footer>
+</body>
+</html>

@@ -9,8 +9,8 @@
         :root {
             --primary-color: #4299e1;
             --secondary-color: #63b3ed;
-            --background-color: #0f172a;
-            --text-color: #f3f4f6; /* Updated text color */
+            --background-color: #1a202c;
+            --text-color: #e2e8f0;
             --card-bg-color: rgba(45, 55, 72, 0.3);
         }
         * {
@@ -22,7 +22,8 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Updated background */
+            background: linear-gradient(to bottom, #1a202c, #000000, #2a4365);
+            background-attachment: fixed;
             min-height: 100vh;
         }
         .container {
@@ -32,40 +33,27 @@
             padding: 0 20px;
         }
         header {
-            background-color: rgba(15, 23, 42, 0.8);
+            background-color: rgba(26, 32, 44, 0.8);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
         }
         nav ul {
             list-style-type: none;
+            padding: 0;
             display: flex;
+            justify-content: center;
         }
         nav ul li {
-            margin-left: 2rem;
+            margin: 0 15px;
         }
         nav ul li a {
             color: var(--text-color);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: var(--secondary-color);
+            font-weight: bold;
         }
         main {
             padding-top: 80px;
@@ -75,15 +63,13 @@
         }
         h1, h2, h3 {
             color: var(--secondary-color);
-            margin-bottom: 1rem;
         }
         .hero {
             text-align: center;
-            padding: 6rem 0;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://source.unsplash.com/1600x900/?technology,cybersecurity') no-repeat center center/cover;
+            padding: 4rem 0;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         .hero p {
@@ -94,11 +80,10 @@
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-weight: 600;
             margin: 0.5rem;
         }
         .btn:hover {
@@ -106,94 +91,65 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
         }
-        .terminal {
+        .terminal, .project-card {
             background-color: var(--card-bg-color);
             backdrop-filter: blur(10px);
-            border-radius: 10px;
+            border-radius: 0.5rem;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             border: 1px solid rgba(74, 85, 104, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
         .terminal::before {
             content: "$ ";
             color: #48bb78;
+        }
+        .terminal:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
         }
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        .project-card {
-            background-color: var(--card-bg-color);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 1.5rem;
-            border: 1px solid rgba(74, 85, 104, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
         footer {
-            background-color: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: var(--background-color);
             color: var(--text-color);
             text-align: center;
             padding: 2rem 0;
             margin-top: 4rem;
         }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .social-links a {
-            color: var(--text-color);
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .footer-content {
-                flex-direction: column;
-            }
-            .social-links {
-                margin-top: 1rem;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">CyberPro</div>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Cybersecurity Professional</h1>
+                <h1>Cybersecurity Professional Resume</h1>
                 <p>Protecting digital assets and securing the future</p>
-                <a href="#about" class="btn">Discover My Skills</a>
-                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#about" class="btn">About Me</a>
+                <a href="#projects" class="btn">My Projects</a>
+                <a href="#experience" class="btn">Experience</a>
+                <a href="#contact" class="btn">Contact</a>
             </div>
         </section>
 
@@ -201,7 +157,14 @@
             <div class="container">
                 <h2>About Me</h2>
                 <div class="terminal">
-                    <p>IT Professional with 5+ years of experience in systems management, technical support, and cybersecurity. Professionally skilled in optimizing multiple CRMs, CDK, Microsoft Office, and Forms, driving efficiency across 16 locations. Experienced in network administration, VoIP systems, SIP Trunking and scalable network design. Personal expertise includes full stack development with Python, React, GitHub, Azure, AWS, and Virtual machines. Dedicated to enhancing operational performance through digital transformation.</p>
+                    <p>IT Professional with 5+ years of experience in systems management,
+                    technical support, and cybersecurity. Professionally skilled in optimizing
+                    multiple CRMs, CDK, Microsoft Office, and Forms, driving efficiency across
+                    16 locations. Experienced in network administration, VoIP systems, SIP
+                    Trunking and scalable network design. Personal Expertise includes full 
+                    stack development with Python, React, GitHub, Azure, AWS, and Virtual 
+                    machines. Dedicated to enhancing operational performance through digital
+                    transformation:</p>
                     <ul>
                         <li>Operating Systems</li>
                         <li>Penetration Testing</li>
@@ -220,7 +183,9 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3>Secure Network Implementation</h3>
-                        <p>Microsoft Sentinel Based SIEM for Centralized Log Management and Security Monitoring: Built an SIEM solution using Microsoft Sentinel, enabling real-time threat detection and automated incident response for home network security</p>
+                        <p>Microsoft Sentinel Based SIEM for Centralized Log Management and Security Monitoring: Built
+                        an SIEM solution using Microsoft Sentinel, enabling real-time threat detection and automated incident
+                        response for home network security</p>
                         <ul>
                             <li>Configured enterprise-grade firewalls</li>
                             <li>Implemented intrusion detection and prevention systems</li>
@@ -231,7 +196,10 @@
                     </div>
                     <div class="project-card">
                         <h3>Penetration Testing Framework</h3>
-                        <p>AZURE SOC with Honeypot and Threat Intelligence Integration for Proactive Threat Detection: Implemented an AZURE based Security Operation Center (SOC) solution designed to capture attacker tactics, integrate global threat intelligence, and provide real-time threat detection and incident response for enterprise environments.</p>
+                        <p>AZURE SOC with Honeypot and Threat Intelligence Integration for Proactive Threat Detection:
+                        Implemented an AZURE based Security Operation Center (SOC) solution designed to capture attacker
+                        tactics, integrate global threat intelligence, and provide real-time threat detection and incident
+                        response for enterprise environments.</p>
                         <ul>
                             <li>Created modular architecture for easy expansion</li>
                             <li>Implemented automated vulnerability scanning</li>
@@ -283,17 +251,9 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Cybersecurity Professional. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
+            <p>&copy; 2025 Cybersecurity Professional. All rights reserved.</p>
         </div>
     </footer>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
 

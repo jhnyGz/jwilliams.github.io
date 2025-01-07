@@ -130,7 +130,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Cybersecurity Professional</h1>
+                <h1>Cybersecurity Professional Resume</h1>
                 <p>Protecting digital assets and securing the future</p>
                 <a href="#about" class="btn">About Me</a>
                 <a href="#projects" class="btn">My Projects</a>
@@ -143,12 +143,21 @@
             <div class="container">
                 <h2>About Me</h2>
                 <div class="terminal">
-                    <p>Experienced cybersecurity professional with expertise in:</p>
+                    <p>IT Professional with 5+ years of experience in systems management,
+                    technical support, and cybersecruity. Professionally skilled in optimizing
+                    multiple CRMs, CDK, Microsfot Office, and Forms, driving effciency across
+                    16 locations. Experienced in network admininstation, VoIP systems, SIP
+                    Trucking and scalable network design. Personal Expertise includes full 
+                    stack development with Python, React, Github, Azure, AWS, and Virtual 
+                    machines. Dedicated to enhancing opertional perfoamce through digital
+                    transformation.:</p>
                     <ul>
-                        <li>Network Security</li>
+                        <li>Operating Systems</li>
                         <li>Penetration Testing</li>
                         <li>Incident Response</li>
                         <li>Security Architecture</li>
+                        <li>Networking</li>
+                        <li>Technical Documentation</li>
                     </ul>
                 </div>
             </div>
@@ -160,7 +169,9 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3>Secure Network Implementation</h3>
-                        <p>Designed and implemented a secure network infrastructure for a Fortune 500 company.</p>
+                        <p>Microsoft Sentinel Based SIEM for Centralized Log Managment and Security Monitoring: Built
+an SIEM solution using Microsoft Sentinel, enabling real-time treat detection and automated incident
+response for home network security</p>
                         <ul>
                             <li>Configured enterprise-grade firewalls</li>
                             <li>Implemented intrusion detection and prevention systems</li>
@@ -171,7 +182,10 @@
                     </div>
                     <div class="project-card">
                         <h3>Penetration Testing Framework</h3>
-                        <p>Developed a custom penetration testing framework for the security team.</p>
+                        <p>AZURE SOC with Honeypot and Threat Intelligence Intergration for Proactive Threat Detection:
+Implemented an AZURE based security Operation Center (SOC) solution designed to capture attacker
+tactics, integrate global threat intelligence m and provide real time threat detection and incident
+response for enterprise environments.</p>
                         <ul>
                             <li>Created modular architecture for easy expansion</li>
                             <li>Implemented automated vulnerability scanning</li>
@@ -189,21 +203,23 @@
                 <h2>Experience</h2>
                 <div class="terminal">
                     <div>
-                        <h3>Senior Cybersecurity Analyst</h3>
-                        <p>TechGuard Solutions | 2020 - Present</p>
+                        <h3>Mastercard Cybersecurity Virtual Experience Program</h3>
+                        <p>Mastercard | August 2024</p>
                         <ul>
-                            <li>Lead a team of security analysts in threat detection and incident response</li>
-                            <li>Implement and maintain security information and event management (SIEM) systems</li>
-                            <li>Conduct regular security assessments and provide recommendations for improvements</li>
+                            <li>Simulated role as Security Awareness Team analyst at Mastercard</li>
+                            <li>Identified phishing threats and analyzed business areas needing enhancing security</li>
+                            <li>Designed Targeted security training courses and procedures</li>
+                            <li>Developed skills in cybersecurity problem solving and data analysis</li>
                         </ul>
                     </div>
                     <div>
-                        <h3>Information Security Specialist</h3>
-                        <p>CyberDefense Corp | 2017 - 2020</p>
+                        <h3>AIG Sheilds Up: Cybersecurity Virtual Experience Program</h3>
+                        <p>AIG Corp | August 2024</p>
                         <ul>
-                            <li>Performed vulnerability assessments and penetration testing for client networks</li>
-                            <li>Developed and implemented security policies and procedures</li>
-                            <li>Provided security awareness training to employees across the organization</li>
+                            <li>Participated in Cyber Defense Unity Threat Analysis Simulation</li>
+                            <li>Researched vulnerabilities using CISA publications</li>
+                            <li>Drafted clear communications for vulnerabilities remediation</li>
+                            <li>Developed ethical hacking script for decryption key bruteforcing using Python</li>
                         </ul>
                     </div>
                 </div>
@@ -214,7 +230,7 @@
             <div class="container">
                 <h2>Contact Me</h2>
                 <p>Interested in working together? Get in touch!</p>
-                <a href="mailto:contact@example.com" class="btn">Email Me</a>
+                <a href="mailto:jwilliams2940@outlook.com" class="btn">Email Me</a>
             </div>
         </section>
     </main>

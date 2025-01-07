@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Professional - Interactive Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #e2e8f0;
+        :root {
+            --primary-color: #4299e1;
+            --secondary-color: #63b3ed;
+            --background-color: #0f172a;
+            --text-color: #f3f4f6; /* Updated text color */
+            --card-bg-color: rgba(45, 55, 72, 0.3);
+        }
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #1a202c, #000000, #2a4365);
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Updated background */
             min-height: 100vh;
         }
         .container {
@@ -21,30 +31,42 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Header styles */
         header {
-            background-color: rgba(26, 32, 44, 0.8);
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
         }
         nav ul {
             list-style-type: none;
-            padding: 0;
             display: flex;
-            justify-content: center;
         }
         nav ul li {
-            margin: 0 15px;
+            margin-left: 2rem;
         }
         nav ul li a {
-            color: #e2e8f0;
+            color: var(--text-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-        /* Main content styles */
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
         main {
             padding-top: 80px;
         }
@@ -52,14 +74,16 @@
             margin-bottom: 4rem;
         }
         h1, h2, h3 {
-            color: #63b3ed;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
         }
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 6rem 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://source.unsplash.com/1600x900/?technology,cybersecurity') no-repeat center center/cover;
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         .hero p {
@@ -68,74 +92,108 @@
         }
         .btn {
             display: inline-block;
-            background-color: #4299e1;
+            background-color: var(--primary-color);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 600;
             margin: 0.5rem;
         }
         .btn:hover {
-            background-color: #3182ce;
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
         }
-        /* Terminal-like box styles */
         .terminal {
-            background-color: rgba(45, 55, 72, 0.3);
+            background-color: var(--card-bg-color);
             backdrop-filter: blur(10px);
-            border-radius: 0.5rem;
+            border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            border: 1px solid #4a5568;
+            border: 1px solid rgba(74, 85, 104, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .terminal::before {
             content: "$ ";
             color: #48bb78;
         }
-        /* Project styles */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .project-card {
-            background-color: rgba(45, 55, 72, 0.3);
+            background-color: var(--card-bg-color);
             backdrop-filter: blur(10px);
-            border-radius: 0.5rem;
+            border-radius: 10px;
             padding: 1.5rem;
-            border: 1px solid #4a5568;
+            border: 1px solid rgba(74, 85, 104, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        /* Footer styles */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
         footer {
-            background-color: #1a202c;
-            color: #e2e8f0;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
             text-align: center;
             padding: 2rem 0;
             margin-top: 4rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .social-links {
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">CyberPro</div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Cybersecurity Professional Resume</h1>
+                <h1>Cybersecurity Professional</h1>
                 <p>Protecting digital assets and securing the future</p>
-                <a href="#about" class="btn">About Me</a>
-                <a href="#projects" class="btn">My Projects</a>
-                <a href="#experience" class="btn">Experience</a>
-                <a href="#contact" class="btn">Contact</a>
+                <a href="#about" class="btn">Discover My Skills</a>
+                <a href="#contact" class="btn">Get In Touch</a>
             </div>
         </section>
 
@@ -143,14 +201,7 @@
             <div class="container">
                 <h2>About Me</h2>
                 <div class="terminal">
-                    <p>IT Professional with 5+ years of experience in systems management,
-                    technical support, and cybersecruity. Professionally skilled in optimizing
-                    multiple CRMs, CDK, Microsfot Office, and Forms, driving effciency across
-                    16 locations. Experienced in network admininstation, VoIP systems, SIP
-                    Trucking and scalable network design. Personal Expertise includes full 
-                    stack development with Python, React, Github, Azure, AWS, and Virtual 
-                    machines. Dedicated to enhancing opertional perfoamce through digital
-                    transformation.:</p>
+                    <p>IT Professional with 5+ years of experience in systems management, technical support, and cybersecurity. Professionally skilled in optimizing multiple CRMs, CDK, Microsoft Office, and Forms, driving efficiency across 16 locations. Experienced in network administration, VoIP systems, SIP Trunking and scalable network design. Personal expertise includes full stack development with Python, React, GitHub, Azure, AWS, and Virtual machines. Dedicated to enhancing operational performance through digital transformation.</p>
                     <ul>
                         <li>Operating Systems</li>
                         <li>Penetration Testing</li>
@@ -169,9 +220,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3>Secure Network Implementation</h3>
-                        <p>Microsoft Sentinel Based SIEM for Centralized Log Managment and Security Monitoring: Built
-an SIEM solution using Microsoft Sentinel, enabling real-time treat detection and automated incident
-response for home network security</p>
+                        <p>Microsoft Sentinel Based SIEM for Centralized Log Management and Security Monitoring: Built an SIEM solution using Microsoft Sentinel, enabling real-time threat detection and automated incident response for home network security</p>
                         <ul>
                             <li>Configured enterprise-grade firewalls</li>
                             <li>Implemented intrusion detection and prevention systems</li>
@@ -182,10 +231,7 @@ response for home network security</p>
                     </div>
                     <div class="project-card">
                         <h3>Penetration Testing Framework</h3>
-                        <p>AZURE SOC with Honeypot and Threat Intelligence Intergration for Proactive Threat Detection:
-Implemented an AZURE based security Operation Center (SOC) solution designed to capture attacker
-tactics, integrate global threat intelligence m and provide real time threat detection and incident
-response for enterprise environments.</p>
+                        <p>AZURE SOC with Honeypot and Threat Intelligence Integration for Proactive Threat Detection: Implemented an AZURE based Security Operation Center (SOC) solution designed to capture attacker tactics, integrate global threat intelligence, and provide real-time threat detection and incident response for enterprise environments.</p>
                         <ul>
                             <li>Created modular architecture for easy expansion</li>
                             <li>Implemented automated vulnerability scanning</li>
@@ -207,13 +253,13 @@ response for enterprise environments.</p>
                         <p>Mastercard | August 2024</p>
                         <ul>
                             <li>Simulated role as Security Awareness Team analyst at Mastercard</li>
-                            <li>Identified phishing threats and analyzed business areas needing enhancing security</li>
-                            <li>Designed Targeted security training courses and procedures</li>
+                            <li>Identified phishing threats and analyzed business areas needing enhanced security</li>
+                            <li>Designed targeted security training courses and procedures</li>
                             <li>Developed skills in cybersecurity problem solving and data analysis</li>
                         </ul>
                     </div>
                     <div>
-                        <h3>AIG Sheilds Up: Cybersecurity Virtual Experience Program</h3>
+                        <h3>AIG Shields Up: Cybersecurity Virtual Experience Program</h3>
                         <p>AIG Corp | August 2024</p>
                         <ul>
                             <li>Participated in Cyber Defense Unity Threat Analysis Simulation</li>
@@ -230,15 +276,23 @@ response for enterprise environments.</p>
             <div class="container">
                 <h2>Contact Me</h2>
                 <p>Interested in working together? Get in touch!</p>
-                <a href="mailto:jwilliams2940@outlook.com" class="btn">Email Me</a>
+                <a href="mailto:your.email@example.com" class="btn">Email Me</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Cybersecurity Professional. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Cybersecurity Professional. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>
